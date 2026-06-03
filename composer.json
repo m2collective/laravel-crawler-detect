@@ -27,7 +27,7 @@
       "role": "Developer"
     }
   ],
-  "homepage": "https://github.com/bu0nq/laravel-crawler-detect-manager",
+  "homepage": "https://github.com/m2collective/laravel-crawler-detect-manager",
   "prefer-stable": true,
   "config": {
     "sort-packages": true
