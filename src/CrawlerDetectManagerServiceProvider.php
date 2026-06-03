@@ -42,7 +42,7 @@ final class CrawlerDetectManagerServiceProvider extends ServiceProvider
     {
         $this->registerDirectives([
             new IsCrawlersBladeDirective(),
-        ], config('crawler-detect-manager.registeringDirectives', true));
+        ], config('crawler-detect-manager.directives', true));
 
         $this->publishes([
             __DIR__ . '/../config/crawler-detect-manager.php' => config_path('crawler-detect-manager.php'),
