@@ -1,18 +1,18 @@
 <?php
 declare(strict_types=1);
 
-namespace M2Collective\CrawlerDetectManager\View\Directives;
+namespace M2Collective\CrawlerDetect\View\Directives;
 
 use M2Collective\PackageKit\View\Directives\AbstractBooleanDirective;
 
-final class IsCrawlersDirective extends AbstractBooleanDirective
+final class IsCrawlerDirective extends AbstractBooleanDirective
 {
     /**
      * @return string
      */
     public function openingName() : string
     {
-        return 'isCrawlers';
+        return 'isCrawler';
     }
 
     /**
@@ -21,7 +21,7 @@ final class IsCrawlersDirective extends AbstractBooleanDirective
      */
     public function openingHandler(mixed $expression): string
     {
-        return "<?php if(\M2Collective\CrawlerDetectManager\Support\Facades\CrawlerDetectManager::isCrawler()) : ?>";
+        return "<?php if(\M2Collective\CrawlerDetect\Support\Facades\CrawlerDetect::isCrawler()) : ?>";
     }
 
     /**
@@ -29,7 +29,7 @@ final class IsCrawlersDirective extends AbstractBooleanDirective
      */
     public function closingName() : string
     {
-        return 'endIsCrawlers';
+        return 'endIsCrawler';
     }
 
     /**
@@ -46,7 +46,7 @@ final class IsCrawlersDirective extends AbstractBooleanDirective
      */
     public function logicalName() : string
     {
-        return 'elseIsCrawlers';
+        return 'elseIsCrawler';
     }
 
     /**

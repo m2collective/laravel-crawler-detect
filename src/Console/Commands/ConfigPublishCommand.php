@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace M2Collective\CrawlerDetectManager\Console\Commands;
+namespace M2Collective\CrawlerDetect\Console\Commands;
 
 use Illuminate\Console\Command;
 
@@ -10,7 +10,7 @@ final class ConfigPublishCommand extends Command
     /**
      * @var string
      */
-    protected $signature = 'crawler-detect-manager:publish-config';
+    protected $signature = 'crawler-detect:publish-config';
 
     /**
      * @var string
@@ -23,7 +23,7 @@ final class ConfigPublishCommand extends Command
     public function handle() : void
     {
         $this->call('vendor:publish', [
-            '--tag' => 'crawler-detect-manager-publish-config'
+            '--tag' => 'crawler-detect-publish-config'
         ]);
     }
 }
