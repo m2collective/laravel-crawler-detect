@@ -3,9 +3,9 @@ declare(strict_types=1);
 
 namespace M2Collective\CrawlerDetectManager\Views\Directives;
 
-use M2Collective\CrawlerDetectManager\Contracts\Views\BladeDirective;
+use M2Collective\PackageTools\Views\Contracts\Directive;
 
-final class IsCrawlersBladeDirective implements BladeDirective
+final class IsCrawlersBladeDirective implements Directive
 {
     /**
      * @return string
