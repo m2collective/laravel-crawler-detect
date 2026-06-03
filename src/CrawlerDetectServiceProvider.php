@@ -3,12 +3,12 @@ declare(strict_types=1);
 
 namespace M2Collective\CrawlerDetect;
 
-use Illuminate\Support\ServiceProvider;
 use M2Collective\CrawlerDetect\Console\Commands\ConfigPublishCommand;
 use M2Collective\CrawlerDetect\View\Directives\IsCrawlerDirective;
-use M2Collective\PackageKit\Support\Traits\RegisterDirectivesTrait;
+use M2Collective\PackageKit\Support\AbstractServiceProvider;
+use M2Collective\PackageKit\Support\Providers\Traits\RegisterDirectivesTrait;
 
-final class CrawlerDetectServiceProvider extends ServiceProvider
+final class CrawlerDetectServiceProvider extends AbstractServiceProvider
 {
     use RegisterDirectivesTrait;
 
