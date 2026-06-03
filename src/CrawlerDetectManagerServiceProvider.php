@@ -4,10 +4,9 @@ declare(strict_types=1);
 namespace M2Collective\CrawlerDetectManager;
 
 use Illuminate\Support\ServiceProvider;
-use M2Collective\CrawlerDetectManager\Commands\ConfigPublishCommand;
-use M2Collective\CrawlerDetectManager\Contracts\CrawlerDetectManager as CrawlerDetectManagerContract;
-use M2Collective\CrawlerDetectManager\Views\Directives\IsCrawlersBladeDirective;
-use M2Collective\PackageTools\Supports\Traits\RegisterDirectivesTrait;
+use M2Collective\CrawlerDetectManager\Console\Commands\ConfigPublishCommand;
+use M2Collective\CrawlerDetectManager\View\Directives\IsCrawlersBladeDirective;
+use M2Collective\PackageTools\Support\Traits\RegisterDirectivesTrait;
 
 final class CrawlerDetectManagerServiceProvider extends ServiceProvider
 {
@@ -23,7 +22,7 @@ final class CrawlerDetectManagerServiceProvider extends ServiceProvider
             'crawler-detect-manager'
         );
 
-        $this->app->singleton(CrawlerDetectManagerContract::class, function () {
+        $this->app->singleton(CrawlerDetect::class, function () {
             return new CrawlerDetectManager(config('crawler-detect-manager.defaults', [
                 '/bot/i',
                 '/crawler/i',

@@ -3,9 +3,7 @@ declare(strict_types=1);
 
 namespace M2Collective\CrawlerDetectManager;
 
-use M2Collective\CrawlerDetectManager\Contracts\CrawlerDetectManager as CrawlerDetectManagerContract;
-
-final class CrawlerDetectManager implements CrawlerDetectManagerContract
+final class CrawlerDetectManager implements CrawlerDetect
 {
     /**
      * @var string

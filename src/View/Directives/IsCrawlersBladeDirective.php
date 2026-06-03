@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace M2Collective\CrawlerDetectManager\Views\Directives;
+namespace M2Collective\CrawlerDetectManager\View\Directives;
 
-use M2Collective\PackageTools\Views\Contracts\Directive;
+use M2Collective\PackageTools\View\Contracts\Directive;
 
 final class IsCrawlersBladeDirective implements Directive
 {
@@ -21,7 +21,7 @@ final class IsCrawlersBladeDirective implements Directive
      */
     public function openingHandler(mixed $expression): string
     {
-        return "<?php if(\M2Collective\CrawlerDetectManager\Facades\CrawlerDetectManager::isCrawler()) : ?>";
+        return "<?php if(\M2Collective\CrawlerDetectManager\Support\Facades\CrawlerDetectManager::isCrawler()) : ?>";
     }
 
     /**

@@ -1,9 +1,9 @@
 <?php
 declare(strict_types=1);
 
-namespace M2Collective\CrawlerDetectManager\Contracts;
+namespace M2Collective\CrawlerDetectManager;
 
-interface CrawlerDetectManager
+interface CrawlerDetect
 {
     /**
      * @return bool
