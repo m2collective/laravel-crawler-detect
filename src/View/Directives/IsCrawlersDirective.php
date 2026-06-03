@@ -3,14 +3,17 @@ declare(strict_types=1);
 
 namespace M2Collective\CrawlerDetectManager\View\Directives;
 
-use M2Collective\PackageKit\View\Contracts\Directive;
+use M2Collective\PackageKit\View\Directives\DirectiveInterface;
+use M2Collective\PackageKit\View\Directives\Tags\ClosingTagInterface;
+use M2Collective\PackageKit\View\Directives\Tags\LogicalTagInterface;
+use M2Collective\PackageKit\View\Directives\Tags\OpeningTagInterface;
 
-final class IsCrawlersDirective implements Directive
+final class IsCrawlersDirective implements DirectiveInterface, OpeningTagInterface, ClosingTagInterface, LogicalTagInterface
 {
     /**
      * @return string
      */
-    public function openingTag() : string
+    public function openingName() : string
     {
         return 'isCrawlers';
     }
@@ -27,7 +30,7 @@ final class IsCrawlersDirective implements Directive
     /**
      * @return string
      */
-    public function closingTag() : string
+    public function closingName() : string
     {
         return 'endIsCrawlers';
     }
@@ -44,7 +47,7 @@ final class IsCrawlersDirective implements Directive
     /**
      * @return string
      */
-    public function logicalTag() : string
+    public function logicalName() : string
     {
         return 'elseIsCrawlers';
     }
