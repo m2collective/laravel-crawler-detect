@@ -6,7 +6,7 @@ namespace M2Collective\CrawlerDetectManager;
 use Illuminate\Support\ServiceProvider;
 use M2Collective\CrawlerDetectManager\Console\Commands\ConfigPublishCommand;
 use M2Collective\CrawlerDetectManager\View\Directives\IsCrawlersBladeDirective;
-use M2Collective\PackageTools\Support\Traits\RegisterDirectivesTrait;
+use M2Collective\PackageTool\Support\Traits\RegisterDirectivesTrait;
 
 final class CrawlerDetectManagerServiceProvider extends ServiceProvider
 {

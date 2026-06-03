@@ -8,6 +8,8 @@ use M2Collective\CrawlerDetectManager\CrawlerDetectManager as CrawlerDetectManag
 
 /**
  * @method static bool isCrawler()
+ *
+ * @see \M2Collective\CrawlerDetectManager\CrawlerDetect
  */
 final class CrawlerDetectManager extends Facade
 {
