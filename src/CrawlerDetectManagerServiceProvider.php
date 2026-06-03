@@ -1,11 +1,11 @@
 <?php
 declare(strict_types=1);
 
-namespace M2Collective\CrawlerDetectManager;
+namespace M2Collective\CrawlerDetect;
 
 use Illuminate\Support\ServiceProvider;
-use M2Collective\CrawlerDetectManager\Console\Commands\ConfigPublishCommand;
-use M2Collective\CrawlerDetectManager\View\Directives\IsCrawlersDirective;
+use M2Collective\CrawlerDetect\Console\Commands\ConfigPublishCommand;
+use M2Collective\CrawlerDetect\View\Directives\IsCrawlerDirective;
 use M2Collective\PackageKit\Support\Traits\RegisterDirectivesTrait;
 
 final class CrawlerDetectManagerServiceProvider extends ServiceProvider
@@ -18,12 +18,12 @@ final class CrawlerDetectManagerServiceProvider extends ServiceProvider
     public function register() : void
     {
         $this->mergeConfigFrom(
-            __DIR__ . '/../config/crawler-detect-manager.php',
-            'crawler-detect-manager'
+            __DIR__ . '/../config/crawler-detect.php',
+            'crawler-detect'
         );
 
-        $this->app->singleton(CrawlerDetectManagerInterface::class, function () {
-            return new CrawlerDetectManager(config('crawler-detect-manager.defaults', [
+        $this->app->singleton(CrawlerDetectInterface::class, function () {
+            return new CrawlerDetect(config('crawler-detect.defaults', [
                 '/bot/i',
                 '/crawler/i',
                 '/spider/i',
@@ -41,12 +41,12 @@ final class CrawlerDetectManagerServiceProvider extends ServiceProvider
     public function boot() : void
     {
         $this->registerDirectives([
-            new IsCrawlersDirective(),
-        ], config('crawler-detect-manager.directives', true));
+            new IsCrawlerDirective(),
+        ], config('crawler-detect.directives', true));
 
         $this->publishes([
-            __DIR__ . '/../config/crawler-detect-manager.php' => config_path('crawler-detect-manager.php'),
-        ], 'crawler-detect-manager-publish-config');
+            __DIR__ . '/../config/crawler-detect.php' => config_path('crawler-detect.php'),
+        ], 'crawler-detect-publish-config');
 
         if ($this->app->runningInConsole()) {
             $this->commands([

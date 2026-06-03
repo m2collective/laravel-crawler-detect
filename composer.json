@@ -1,6 +1,6 @@
 {
   "$schema": "https://getcomposer.org/schema.json",
-  "name": "m2collective/laravel-crawler-detect-manager",
+  "name": "m2collective/laravel-crawler-detect",
   "keywords": [],
   "license": "MIT",
   "require": {
@@ -9,13 +9,13 @@
   },
   "autoload": {
     "psr-4": {
-      "M2Collective\\CrawlerDetectManager\\": "src/"
+      "M2Collective\\CrawlerDetect\\": "src/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "M2Collective\\CrawlerDetectManager\\CrawlerDetectManagerServiceProvider"
+        "M2Collective\\CrawlerDetect\\CrawlerDetectServiceProvider"
       ]
     }
   },
@@ -27,7 +27,7 @@
       "role": "Developer"
     }
   ],
-  "homepage": "https://github.com/m2collective/laravel-crawler-detect-manager",
+  "homepage": "https://github.com/m2collective/laravel-crawler-detect",
   "prefer-stable": true,
   "config": {
     "sort-packages": true
