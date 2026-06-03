@@ -11,7 +11,7 @@ use M2Collective\CrawlerDetect\CrawlerDetectInterface;
  *
  * @see \M2Collective\CrawlerDetect\CrawlerDetect
  */
-final class CrawlerDetectManager extends Facade
+final class CrawlerDetect extends Facade
 {
     /**
      * @return string
