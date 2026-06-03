@@ -5,7 +5,7 @@
   "license": "MIT",
   "require": {
     "php": "^8.3",
-    "m2collective/laravel-package-kit": "^0.2"
+    "m2collective/laravel-package-kit": "^0.3"
   },
   "autoload": {
     "psr-4": {
