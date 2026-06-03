@@ -5,13 +5,13 @@ namespace M2Collective\CrawlerDetectManager;
 
 use Illuminate\Support\ServiceProvider;
 use M2Collective\CrawlerDetectManager\Commands\ConfigPublishCommand;
-use M2Collective\CrawlerDetectManager\Concerns\RegisterDirectives;
 use M2Collective\CrawlerDetectManager\Contracts\CrawlerDetectManager as CrawlerDetectManagerContract;
 use M2Collective\CrawlerDetectManager\Views\Directives\IsCrawlersBladeDirective;
+use M2Collective\PackageTools\Supports\Traits\RegisterDirectivesTrait;
 
 final class CrawlerDetectManagerServiceProvider extends ServiceProvider
 {
-    use RegisterDirectives;
+    use RegisterDirectivesTrait;
 
     /**
      * @return void
