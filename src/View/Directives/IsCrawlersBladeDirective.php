@@ -3,7 +3,7 @@ declare(strict_types=1);
 
 namespace M2Collective\CrawlerDetectManager\View\Directives;
 
-use M2Collective\PackageTool\View\Contracts\Directive;
+use M2Collective\PackageKit\View\Contracts\Directive;
 
 final class IsCrawlersBladeDirective implements Directive
 {
