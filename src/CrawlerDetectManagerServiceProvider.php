@@ -5,7 +5,7 @@ namespace M2Collective\CrawlerDetectManager;
 
 use Illuminate\Support\ServiceProvider;
 use M2Collective\CrawlerDetectManager\Console\Commands\ConfigPublishCommand;
-use M2Collective\CrawlerDetectManager\View\Directives\IsCrawlersBladeDirective;
+use M2Collective\CrawlerDetectManager\View\Directives\IsCrawlersDirective;
 use M2Collective\PackageKit\Support\Traits\RegisterDirectivesTrait;
 
 final class CrawlerDetectManagerServiceProvider extends ServiceProvider
@@ -41,7 +41,7 @@ final class CrawlerDetectManagerServiceProvider extends ServiceProvider
     public function boot() : void
     {
         $this->registerDirectives([
-            new IsCrawlersBladeDirective(),
+            new IsCrawlersDirective(),
         ], config('crawler-detect-manager.directives', true));
 
         $this->publishes([

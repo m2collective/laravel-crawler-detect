@@ -5,7 +5,7 @@ namespace M2Collective\CrawlerDetectManager\View\Directives;
 
 use M2Collective\PackageKit\View\Contracts\Directive;
 
-final class IsCrawlersBladeDirective implements Directive
+final class IsCrawlersDirective implements Directive
 {
     /**
      * @return string
