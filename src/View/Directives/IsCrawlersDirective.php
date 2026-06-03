@@ -3,12 +3,9 @@ declare(strict_types=1);
 
 namespace M2Collective\CrawlerDetectManager\View\Directives;
 
-use M2Collective\PackageKit\View\Directives\DirectiveInterface;
-use M2Collective\PackageKit\View\Directives\Tags\ClosingTagInterface;
-use M2Collective\PackageKit\View\Directives\Tags\LogicalTagInterface;
-use M2Collective\PackageKit\View\Directives\Tags\OpeningTagInterface;
+use M2Collective\PackageKit\View\Directives\AbstractBooleanDirective;
 
-final class IsCrawlersDirective implements DirectiveInterface, OpeningTagInterface, ClosingTagInterface, LogicalTagInterface
+final class IsCrawlersDirective extends AbstractBooleanDirective
 {
     /**
      * @return string
