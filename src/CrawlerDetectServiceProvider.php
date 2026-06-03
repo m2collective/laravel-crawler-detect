@@ -8,7 +8,7 @@ use M2Collective\CrawlerDetect\Console\Commands\ConfigPublishCommand;
 use M2Collective\CrawlerDetect\View\Directives\IsCrawlerDirective;
 use M2Collective\PackageKit\Support\Traits\RegisterDirectivesTrait;
 
-final class CrawlerDetectManagerServiceProvider extends ServiceProvider
+final class CrawlerDetectServiceProvider extends ServiceProvider
 {
     use RegisterDirectivesTrait;
 
