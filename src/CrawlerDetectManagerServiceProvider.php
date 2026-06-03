@@ -22,8 +22,8 @@ final class CrawlerDetectManagerServiceProvider extends ServiceProvider
             'crawler-detect-manager'
         );
 
-        $this->app->singleton(CrawlerDetectManager::class, function () {
-            return new CrawlerDetect(config('crawler-detect-manager.defaults', [
+        $this->app->singleton(CrawlerDetectManagerInterface::class, function () {
+            return new CrawlerDetectManager(config('crawler-detect-manager.defaults', [
                 '/bot/i',
                 '/crawler/i',
                 '/spider/i',
