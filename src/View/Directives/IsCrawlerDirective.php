@@ -3,9 +3,9 @@ declare(strict_types=1);
 
 namespace M2Collective\CrawlerDetect\View\Directives;
 
-use M2Collective\PackageKit\View\Directives\AbstractBooleanDirective;
+use M2Collective\PackageKit\View\Directives\Types\BooleanDirective;
 
-final class IsCrawlerDirective extends AbstractBooleanDirective
+final class IsCrawlerDirective extends BooleanDirective
 {
     /**
      * @return string
