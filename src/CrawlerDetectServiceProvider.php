@@ -6,11 +6,11 @@ namespace M2Collective\CrawlerDetect;
 use M2Collective\CrawlerDetect\Console\Commands\ConfigPublishCommand;
 use M2Collective\CrawlerDetect\View\Directives\IsCrawlerDirective;
 use M2Collective\PackageKit\Support\AbstractServiceProvider;
-use M2Collective\PackageKit\Support\Providers\Traits\RegisterDirectivesTrait;
+use M2Collective\PackageKit\Support\Providers\Concerns\RegisterDirectives;
 
 final class CrawlerDetectServiceProvider extends AbstractServiceProvider
 {
-    use RegisterDirectivesTrait;
+    use RegisterDirectives;
 
     /**
      * @return void
