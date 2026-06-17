@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-namespace M2Collective\CrawlerDetect\Console\Commands;
+namespace M2Collective\CrawlerDetect\Commands;
 
 use Illuminate\Console\Command;
 

@@ -1,11 +1,18 @@
 {
   "$schema": "https://getcomposer.org/schema.json",
   "name": "m2collective/laravel-crawler-detect",
-  "keywords": [],
+  "description": "",
+  "keywords": [
+    "m2collective",
+    "laravel",
+    "crawler",
+    "detect"
+  ],
   "license": "MIT",
   "require": {
     "php": "^8.3",
-    "m2collective/laravel-package-kit": "^0.3"
+    "laravel/framework": "^13.0",
+    "m2collective/laravel-blade-directive": "^0.1"
   },
   "autoload": {
     "psr-4": {

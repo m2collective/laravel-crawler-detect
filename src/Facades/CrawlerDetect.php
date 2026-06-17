@@ -1,15 +1,15 @@
 <?php
 declare(strict_types=1);
 
-namespace M2Collective\CrawlerDetect\Support\Facades;
+namespace M2Collective\CrawlerDetect\Facades;
 
 use Illuminate\Support\Facades\Facade;
-use M2Collective\CrawlerDetect\CrawlerDetectInterface;
+use M2Collective\CrawlerDetect\CrawlerDetect as CrawlerDetectContract;
 
 /**
  * @method static bool isCrawler()
  *
- * @see \M2Collective\CrawlerDetect\CrawlerDetect
+ * @see \M2Collective\CrawlerDetect\CrawlerDetectManager
  */
 final class CrawlerDetect extends Facade
 {
@@ -18,6 +18,6 @@ final class CrawlerDetect extends Facade
      */
     protected static function getFacadeAccessor(): string
     {
-        return CrawlerDetectInterface::class;
+        return CrawlerDetectContract::class;
     }
 }

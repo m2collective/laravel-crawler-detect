@@ -3,27 +3,27 @@ declare(strict_types=1);
 
 namespace M2Collective\CrawlerDetect;
 
-use M2Collective\CrawlerDetect\Console\Commands\ConfigPublishCommand;
-use M2Collective\CrawlerDetect\View\Directives\IsCrawlerDirective;
-use M2Collective\PackageKit\Support\ServiceProvider;
-use M2Collective\PackageKit\Support\Providers\Concerns\RegisterDirectives;
+use Illuminate\Support\ServiceProvider;
+use M2Collective\BladeDirective\Concerns\RegisterBladeDirectives;
+use M2Collective\CrawlerDetect\Commands\ConfigPublishCommand;
+use M2Collective\CrawlerDetect\Views\Directives\IsCrawlerDirective;
 
 final class CrawlerDetectServiceProvider extends ServiceProvider
 {
-    use RegisterDirectives;
+    use RegisterBladeDirectives;
 
     /**
      * @return void
      */
-    public function register() : void
+    public function register(): void
     {
         $this->mergeConfigFrom(
             __DIR__ . '/../config/crawler-detect.php',
             'crawler-detect'
         );
 
-        $this->app->singleton(CrawlerDetectInterface::class, function () {
-            return new CrawlerDetect(config('crawler-detect.defaults', [
+        $this->app->singleton(CrawlerDetect::class, function () {
+            return new CrawlerDetectManager(config('crawler-detect.crawlers', [
                 '/bot/i',
                 '/crawler/i',
                 '/spider/i',
@@ -38,11 +38,11 @@ final class CrawlerDetectServiceProvider extends ServiceProvider
     /**
      * @return void
      */
-    public function boot() : void
+    public function boot(): void
     {
-        $this->registerDirectives([
+        $this->registerBladeDirectives([
             new IsCrawlerDirective(),
-        ], config('crawler-detect.directives', true));
+        ]);
 
         $this->publishes([
             __DIR__ . '/../config/crawler-detect.php' => config_path('crawler-detect.php'),
