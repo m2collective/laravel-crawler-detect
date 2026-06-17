@@ -23,3 +23,7 @@ php artisan crawler-detect:publish-config
 
 @endIsCrawler
 ```
+
+## License
+
+The MIT License (MIT). Please see the [License file](LICENSE.txt) for more information.
